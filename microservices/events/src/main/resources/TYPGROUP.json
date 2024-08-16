@@ -1,0 +1,20 @@
+[
+  {
+    "id": "65f1963f51c7916e6428c876",
+    "functionalId": "GRP_MDM",
+    "domain": "GROUP",
+    "name": "Groupe MDM",
+    "description": "Groupe MDM",
+    "additionalFields": {},
+    "active": true
+  },
+  {
+    "id": "6463636bd7c6113ae2b42165",
+    "functionalId": "GRP_OMN_PP",
+    "domain": "GROUP",
+    "name": "Groupe Gamme Essentielle PP",
+    "description": "Groupe Gamme Essentielle PP",
+    "additionalFields": {},
+    "active": true
+  }
+]

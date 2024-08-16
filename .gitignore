@@ -1,0 +1,4 @@
+.idea
+microservices/.data
+microservices/db
+microservices/events/target

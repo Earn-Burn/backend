@@ -1,0 +1,135 @@
+[
+  {
+    "id": "6313f45c8f980e4c3afb1e7b",
+    "functionalId": "ASSISTANCE",
+    "domain": "FAMILY",
+    "name": "Assistance",
+    "description": "Famille Assistance",
+    "additionalFields": {
+      "optionsLevel1": ""
+    },
+    "active": true
+  },
+  {
+    "id": "6313f4238f980e4c3afb1e7a",
+    "functionalId": "ASSURANCE",
+    "domain": "FAMILY",
+    "name": "Assurance",
+    "description": "Famille Assurance",
+    "additionalFields": {},
+    "active": true
+  },
+  {
+    "id": "633eb188b129711a48c4f469",
+    "functionalId": "BANK_ONLINE",
+    "domain": "FAMILY",
+    "name": "Banque en ligne",
+    "description": "Famille Banque en ligne",
+    "additionalFields": {},
+    "active": true
+  },
+  {
+    "id": "637f7e70ba621b64a8c23660",
+    "functionalId": "CONVENTION",
+    "domain": "FAMILY",
+    "name": "Conventions",
+    "description": "Familles des Convention",
+    "additionalFields": {},
+    "active": true
+  },
+  {
+    "id": "6685540c88e9f312f44dc8bd",
+    "functionalId": "CONVENTION_CARD",
+    "domain": "FAMILY",
+    "name": "Convention Carte",
+    "description": "Convention Carte",
+    "additionalFields": {},
+    "active": true
+  },
+  {
+    "id": "65607985d78abe14204e2b0e",
+    "functionalId": "CREDIT",
+    "domain": "FAMILY",
+    "name": "Crédit",
+    "description": "Famille Crédit",
+    "additionalFields": {},
+    "active": true
+  },
+  {
+    "id": "65b21ac753ee42070ef67571",
+    "functionalId": "DAMAGE",
+    "domain": "FAMILY",
+    "name": "Dommage",
+    "description": "Famille Dommage",
+    "additionalFields": {},
+    "active": true
+  },
+  {
+    "id": "633eb16bb129711a48c4f468",
+    "functionalId": "DOTATION",
+    "domain": "FAMILY",
+    "name": "Dotations",
+    "description": "Famille Dotation",
+    "additionalFields": {},
+    "active": true
+  },
+  {
+    "id": "633eb14fb129711a48c4f467",
+    "functionalId": "EPARGNE",
+    "domain": "FAMILY",
+    "name": "Epargne",
+    "description": "Famille Epargne",
+    "additionalFields": {},
+    "active": true
+  },
+  {
+    "id": "63a48bc43f01970bbddc7120",
+    "functionalId": "EXEMPTION",
+    "domain": "FAMILY",
+    "name": "Exonérations",
+    "description": "Exonérations",
+    "additionalFields": {},
+    "active": true
+  },
+  {
+    "id": "62b4a82df88d31547d83d744",
+    "functionalId": "MONETIQUE",
+    "domain": "FAMILY",
+    "name": "Monétique",
+    "description": "Famille Cartes",
+    "additionalFields": {
+      "optionsLevel1": "CARD_THEME",
+      "optionsLevel2": "CARD_FORMULA"
+    },
+    "active": true
+  },
+  {
+    "id": "62b59422f88d31547d83d748",
+    "functionalId": "OFFER",
+    "domain": "FAMILY",
+    "name": "Offres (Packages)",
+    "description": "Famille Offres (Packages)",
+    "additionalFields": {
+      "optionsLevel1": "formula"
+    },
+    "active": true
+  },
+  {
+    "id": "63106863472eef2bf0ffb398",
+    "functionalId": "SERVICE",
+    "domain": "FAMILY",
+    "name": "Services",
+    "description": "Famille Services",
+    "additionalFields": {},
+    "active": true
+  },
+  {
+    "id": "65b2756142980511504395ea",
+    "functionalId": "TEST_FAMILY",
+    "domain": "FAMILY",
+    "name": "test",
+    "description": "test",
+    "additionalFields": {},
+    "active": false
+  }
+]

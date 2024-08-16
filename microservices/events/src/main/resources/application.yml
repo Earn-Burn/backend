@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: events
+  data:
+    mongodb:
+      authentication-database: admin
+#      username: admin
+#      password: password
+      database: fide
+      port: 27017
+      host: localhost

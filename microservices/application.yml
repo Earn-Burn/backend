@@ -1,0 +1,3 @@
+microservice:
+  port:
+    events: 8091

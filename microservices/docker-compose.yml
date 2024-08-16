@@ -1,0 +1,61 @@
+version: '3.8' # Specify the version to ensure compatibility
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - .data:/data/db
+      - ./db/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=admin
+      - MONGODB_INITDB_ROOT_PASSWORD=password
+volumes:
+  data: {}
+
+networks:
+  default:
+    name: mongodb_network
+
+
+#  eureka-server:
+#    build:
+#      context: eureka-server
+#      dockerfile: Dockerfile
+#    image: maghrebtrip/eureka-server:latest
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    container_name: eureka-server
+#    ports:
+#      - "8761:8761"
+#    networks:
+#      - spring
+#
+#  tourist:
+#    build:
+#      context: tourist
+#      dockerfile: Dockerfile
+#    image: maghrebtrip/tourist:latest
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    container_name: tourist
+#    ports:
+#      - "8080:8080"
+#    networks:
+#      - spring
+#      - postgres
+#    depends_on:
+#      - eureka-server
+#      - postgres
+#      -
+#networks:
+#  postgres:
+#    driver: bridge
+#  spring:
+#    driver: bridge
+#
+#volumes:
+#  postgres:
+#  pgadmin:
