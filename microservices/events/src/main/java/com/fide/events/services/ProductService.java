@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Arrays;
 
 @AllArgsConstructor
 @Service
@@ -24,5 +25,9 @@ public class ProductService {
 
     public List<Product> findByDomain (Typologie domain) {
         return productRepository.findByDomain(domain);
+    }
+
+    public List<Typologie> findAllDomains() {
+        return Arrays.asList(Typologie.values());
     }
 }
