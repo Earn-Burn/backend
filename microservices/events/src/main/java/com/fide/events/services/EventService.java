@@ -31,4 +31,27 @@ public class EventService {
     public Event saveEvent(Event event) {
         return eventRepository.save(event);
     }
+
+    public Event updateEvent(String id, Event updatedEvent) {
+        return eventRepository.findById(id)
+                .map(event -> {
+                    event.setCode(updatedEvent.getCode());
+                    event.setDescription(updatedEvent.getDescription());
+                    event.setTypologie(updatedEvent.getTypologie());
+                    event.setProduit(updatedEvent.getProduit());
+                    event.setPoints(updatedEvent.getPoints());
+                    event.setConditionCode(updatedEvent.getConditionCode());
+                    return eventRepository.save(event);
+                })
+                .orElseThrow(() -> new RuntimeException("Event not found with id " + id));
+    }
+
+
+
+    public void deleteEvent(String id) {
+        if (!eventRepository.existsById(id)) {
+            throw new RuntimeException("Event not found with id " + id);
+        }
+        eventRepository.deleteById(id);
+    }
 }

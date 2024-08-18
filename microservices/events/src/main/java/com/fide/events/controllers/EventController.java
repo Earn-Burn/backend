@@ -28,6 +28,21 @@ public class EventController {
 
     @PostMapping("save")
     public Event saveEvent(@RequestBody Event event) {
+        System.out.println("Received event: " + event);
         return eventService.saveEvent(event);
     }
+
+    @PutMapping("update/{id}")
+    public Event updateEvent(@PathVariable("id") String id, @RequestBody Event event) {
+        System.out.println("Updating event with id: " + id);
+        System.out.println("Received event data: " + event);
+        return eventService.updateEvent(id, event);
+    }
+
+    @DeleteMapping("delete/{id}")
+    public void deleteEvent(@PathVariable("id") String id) {
+        eventService.deleteEvent(id);
+    }
+
+
 }
