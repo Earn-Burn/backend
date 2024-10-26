@@ -28,17 +28,20 @@ pipeline {
                             -Dsonar.projectKey=spring-test ^
                             -Dsonar.host.url=http://localhost:9000 ^
                             -Dsonar.login=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea ^
-                            -Dsonar.sources=microservices/client/src/main/java,microservices/events/src/main/java,microservices/offers/src/main/java ^
-                            -Dsonar.java.binaries=microservices/client/target/classes,microservices/events/target/classes,microservices/offers/target/classes ^
+                            -Dsonar.projectBaseDir=microservices ^
+                            -Dsonar.sources=. ^
                             -Dsonar.modules=client,events,offers ^
                             -Dsonar.java.source=17 ^
                             -Dsonar.sourceEncoding=UTF-8 ^
-                            -Dsonar.client.sonar.sources=microservices/client/src/main/java ^
-                            -Dsonar.client.sonar.java.binaries=microservices/client/target/classes ^
-                            -Dsonar.events.sonar.sources=microservices/events/src/main/java ^
-                            -Dsonar.events.sonar.java.binaries=microservices/events/target/classes ^
-                            -Dsonar.offers.sonar.sources=microservices/offers/src/main/java ^
-                            -Dsonar.offers.sonar.java.binaries=microservices/offers/target/classes
+                            -Dsonar.client.projectBaseDir=microservices/client ^
+                            -Dsonar.client.sources=src/main/java ^
+                            -Dsonar.client.java.binaries=target/classes ^
+                            -Dsonar.events.projectBaseDir=microservices/events ^
+                            -Dsonar.events.sources=src/main/java ^
+                            -Dsonar.events.java.binaries=target/classes ^
+                            -Dsonar.offers.projectBaseDir=microservices/offers ^
+                            -Dsonar.offers.sources=src/main/java ^
+                            -Dsonar.offers.java.binaries=target/classes
                         """
                     }
                 }
