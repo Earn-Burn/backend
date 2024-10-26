@@ -33,6 +33,7 @@ pipeline {
                         -Dsonar.exclusions=**/*.gitignore,**/.mvn/wrapper/maven-wrapper.properties,**/mvnw,**/*.cmd,**/data/journal/** ^
                         -Dsonar.java.source=17 ^
                         -Dsonar.sourceEncoding=UTF-8 ^
+                        -Dsonar.java.binaries=client/target/classes,events/target/classes,offers/target/classes ^
                         -Dsonar.client.projectBaseDir=microservices/client ^
                         -Dsonar.client.sources=. ^
                         -Dsonar.events.projectBaseDir=microservices/events ^
