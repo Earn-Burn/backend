@@ -5,15 +5,15 @@ pipeline {
         stage('Checkout') {
             steps {
                 git url: 'https://github.com/Earn-Burn/backend.git', branch: 'main'
-                bat 'dir' // Affiche le contenu du répertoire pour vérifier le checkout
             }
         }
 
-//         stage('Compile') {
-//             steps {
-//                 bat 'mvn clean compile' // Assurez-vous que Maven est installé et accessible
-//             }
-//         }
+        stage('Compile') {
+            steps {
+                // Spécifiez le chemin vers le répertoire contenant le pom.xml
+                bat 'mvn -f ./backend/microservices/pom.xml clean compile'
+            }
+        }
 
         stage('SonarQube Analysis') {
             steps {
@@ -24,9 +24,9 @@ pipeline {
                             ${scannerHome}\\bin\\sonar-scanner.bat ^
                             -Dsonar.projectKey=spring-test ^
                             -Dsonar.host.url=http://localhost:9000 ^
-                            -Dsonar.login=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea^
-                            -Dsonar.sources=./src ^
-                            -Dsonar.java.binaries=./target/classes
+                            -Dsonar.login=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea ^
+                            -Dsonar.sources=./backend/microservices ^
+                            -Dsonar.java.binaries=./backend/microservices/target/classes
                         """
                     }
                 }
