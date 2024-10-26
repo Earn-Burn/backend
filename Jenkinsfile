@@ -33,8 +33,15 @@ stage('SonarQube Analysis') {
                 -Dsonar.exclusions=**/*.gitignore,**/.mvn/wrapper/maven-wrapper.properties,**/mvnw,**/*.cmd,**/data/journal/** ^
                 -Dsonar.modules=client,events,offers ^
                 -Dsonar.java.source=17 ^
-                -Dsonar.sourceEncoding=UTF-8
+                -Dsonar.sourceEncoding=UTF-8 ^
+                -Dsonar.client.projectBaseDir=microservices/client ^
+                -Dsonar.client.sources=. ^
+                -Dsonar.events.projectBaseDir=microservices/events ^
+                -Dsonar.events.sources=. ^
+                -Dsonar.offers.projectBaseDir=microservices/offers ^
+                -Dsonar.offers.sources=.
                 """
+
             }
         }
     }
