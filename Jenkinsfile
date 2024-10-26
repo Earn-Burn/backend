@@ -24,7 +24,7 @@ pipeline {
                             ${scannerHome}\\bin\\sonar-scanner.bat ^
                             -Dsonar.projectKey=spring-test ^
                             -Dsonar.host.url=http://localhost:9000 ^
-                            -Dsonar.login=sqp_c42854901308a8b594be233bafa1f87abeccb71b ^
+                            -Dsonar.login=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea^
                             -Dsonar.sources=./src ^
                             -Dsonar.java.binaries=./target/classes
                         """
