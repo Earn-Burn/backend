@@ -8,12 +8,13 @@ pipeline {
             }
         }
 
-        stage('Compile') {
-            steps {
-                // Spécifiez le chemin vers le répertoire contenant le pom.xml
-                bat 'mvn -f ./backend/microservices/pom.xml clean compile'
-            }
-        }
+       stage('Compile') {
+           steps {
+               // Utilisez le chemin absolu vers le pom.xml
+               bat 'mvn -f "C:/Users/hp/Desktop/projet-stage/earn backend/backend/microservices/pom.xml" clean compile'
+           }
+       }
+
 
         stage('SonarQube Analysis') {
             steps {
