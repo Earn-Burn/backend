@@ -5,13 +5,13 @@ pipeline {
         stage('Checkout') {
             steps {
                 git url: 'https://github.com/Earn-Burn/backend.git', branch: 'main'
+                bat 'dir' // Affiche le contenu du répertoire pour vérifier le checkout
             }
         }
 
         stage('Compile') {
             steps {
-                // Assurez-vous que Maven est installé et configuré dans Jenkins
-                bat 'mvn clean compile'
+                bat 'mvn clean compile' // Assurez-vous que Maven est installé et accessible
             }
         }
 
