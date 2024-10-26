@@ -9,11 +9,11 @@ pipeline {
             }
         }
 
-        stage('Compile') {
-            steps {
-                bat 'mvn clean compile' // Assurez-vous que Maven est installé et accessible
-            }
-        }
+//         stage('Compile') {
+//             steps {
+//                 bat 'mvn clean compile' // Assurez-vous que Maven est installé et accessible
+//             }
+//         }
 
         stage('SonarQube Analysis') {
             steps {
