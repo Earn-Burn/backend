@@ -23,26 +23,18 @@ pipeline {
                 script {
                     def scannerHome = tool 'sonar-scanner'
                     withSonarQubeEnv('SonarQube') {
-                        bat """
-                            ${scannerHome}\\bin\\sonar-scanner.bat ^
-                            -Dsonar.projectKey=Earn-and-Burn ^
-                            -Dsonar.host.url=http://localhost:9000 ^
-                            -Dsonar.login=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea ^
-                            -Dsonar.projectBaseDir=microservices ^
-                            -Dsonar.sources=. ^
-                            -Dsonar.modules=client,events,offers ^
-                            -Dsonar.java.source=17 ^
-                            -Dsonar.sourceEncoding=UTF-8 ^
-                            -Dsonar.client.projectBaseDir=microservices/client ^
-                            -Dsonar.client.sources=src/main/java ^
-                            -Dsonar.client.java.binaries=target/classes ^
-                            -Dsonar.events.projectBaseDir=microservices/events ^
-                            -Dsonar.events.sources=src/main/java ^
-                            -Dsonar.events.java.binaries=target/classes ^
-                            -Dsonar.offers.projectBaseDir=microservices/offers ^
-                            -Dsonar.offers.sources=src/main/java ^
-                            -Dsonar.offers.java.binaries=target/classes
-                        """
+                       bat """
+                           ${scannerHome}\\bin\\sonar-scanner.bat ^
+                           -Dsonar.projectKey=Earn-and-Burn ^
+                           -Dsonar.host.url=http://localhost:9000 ^
+                           -Dsonar.login=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea ^
+                           -Dsonar.projectBaseDir=microservices ^
+                           -Dsonar.sources=. ^
+                           -Dsonar.exclusions=**/*.gitignore ^
+                           -Dsonar.modules=client,events,offers ^
+                           -Dsonar.java.source=17 ^
+                           -Dsonar.sourceEncoding=UTF-8
+                       """
                     }
                 }
             }
