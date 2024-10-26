@@ -8,10 +8,15 @@ pipeline {
             }
         }
 
-        stage('Compile') {
+        stage('Compile Microservices') {
             steps {
-                // Use relative path after checkout
-                bat 'mvn -f "microservices/pom.xml" clean compile'
+                // Compile chaque microservice
+                bat '''
+                    cd microservices
+                    mvn -f client/pom.xml clean compile
+                    mvn -f events/pom.xml clean compile
+                    mvn -f offers/pom.xml clean compile
+                '''
             }
         }
 
@@ -25,9 +30,13 @@ pipeline {
                             -Dsonar.projectKey=spring-test ^
                             -Dsonar.host.url=http://localhost:9000 ^
                             -Dsonar.login=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea ^
-                            -Dsonar.sources=microservices/src ^
-                            -Dsonar.java.binaries=microservices/target/classes ^
-                            -Dsonar.java.source=17
+                            -Dsonar.sources=microservices/client/src,microservices/events/src,microservices/offers/src ^
+                            -Dsonar.java.binaries=microservices/client/target/classes,microservices/events/target/classes,microservices/offers/target/classes ^
+                            -Dsonar.modules=client,events,offers ^
+                            -Dsonar.java.source=17 ^
+                            -Dsonar.sourceEncoding=UTF-8 ^
+                            -Dsonar.coverage.exclusions=**/test/**,**/target/** ^
+                            -Dsonar.exclusions=**/test/**,**/target/**
                         """
                     }
                 }
