@@ -18,31 +18,28 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            steps {
-                script {
-                    def scannerHome = tool 'sonar-scanner'
-                    withSonarQubeEnv('SonarQube') {
-
-bat """
-    ${scannerHome}\\bin\\sonar-scanner.bat ^
-    -Dsonar.projectKey=Earn-and-Burn ^
-    -Dsonar.host.url=http://localhost:9000 ^
-    -Dsonar.login=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea ^
-    -Dsonar.projectBaseDir=microservices ^
-    -Dsonar.sources=. ^
-    -Dsonar.exclusions=**/*.gitignore,**/.mvn/wrapper/maven-wrapper.properties,**/mvnw ^
-    -Dsonar.modules=client,events,offers ^
-    -Dsonar.java.source=17 ^
-    -Dsonar.sourceEncoding=UTF-8
-"""
-
-
-
-                    }
-                }
+stage('SonarQube Analysis') {
+    steps {
+        script {
+            def scannerHome = tool 'sonar-scanner'
+            withSonarQubeEnv('SonarQube') {
+                bat """
+                ${scannerHome}\\bin\\sonar-scanner.bat ^
+                -Dsonar.projectKey=Earn-and-Burn ^
+                -Dsonar.host.url=http://localhost:9000 ^
+                -Dsonar.token=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea ^
+                -Dsonar.projectBaseDir=microservices ^
+                -Dsonar.sources=. ^
+                -Dsonar.exclusions=**/*.gitignore,**/.mvn/wrapper/maven-wrapper.properties,**/mvnw,**/*.cmd,**/data/journal/** ^
+                -Dsonar.modules=client,events,offers ^
+                -Dsonar.java.source=17 ^
+                -Dsonar.sourceEncoding=UTF-8
+                """
             }
         }
+    }
+}
+
 
         stage('Quality Gate') {
             steps {
