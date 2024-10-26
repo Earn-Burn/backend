@@ -26,7 +26,7 @@ pipeline {
                             -Dsonar.projectKey=spring-test ^
                             -Dsonar.host.url=http://localhost:9000 ^
                             -Dsonar.login=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea ^
-                            -Dsonar.sources=./backend/microservices ^
+                            -Dsonar.sources="C:/Users/hp/Desktop/projet-stage/earn backend/backend/microservices/src" ^
                             -Dsonar.java.binaries=./backend/microservices/target/classes
                         """
                     }
