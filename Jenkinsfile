@@ -25,7 +25,7 @@ pipeline {
                     withSonarQubeEnv('SonarQube') {
                         bat """
                             ${scannerHome}\\bin\\sonar-scanner.bat ^
-                            -Dsonar.projectKey=spring-test ^
+                            -Dsonar.projectKey=Earn-and-Burn ^
                             -Dsonar.host.url=http://localhost:9000 ^
                             -Dsonar.login=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea ^
                             -Dsonar.projectBaseDir=microservices ^
