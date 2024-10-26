@@ -8,13 +8,12 @@ pipeline {
             }
         }
 
-       stage('Compile') {
-           steps {
-               // Utilisez le chemin absolu vers le pom.xml
-               bat 'mvn -f "C:/Users/hp/Desktop/projet-stage/earn backend/backend/microservices/pom.xml" clean compile'
-           }
-       }
-
+        stage('Compile') {
+            steps {
+                // Use relative path after checkout
+                bat 'mvn -f "microservices/pom.xml" clean compile'
+            }
+        }
 
         stage('SonarQube Analysis') {
             steps {
@@ -26,8 +25,9 @@ pipeline {
                             -Dsonar.projectKey=spring-test ^
                             -Dsonar.host.url=http://localhost:9000 ^
                             -Dsonar.login=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea ^
-                            -Dsonar.sources="C:/Users/hp/Desktop/projet-stage/earn backend/backend/microservices/src" ^
-                            -Dsonar.java.binaries=./backend/microservices/target/classes
+                            -Dsonar.sources=microservices/src ^
+                            -Dsonar.java.binaries=microservices/target/classes ^
+                            -Dsonar.java.source=17
                         """
                     }
                 }
