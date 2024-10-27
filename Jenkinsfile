@@ -27,7 +27,7 @@ pipeline {
                         ${scannerHome}\\bin\\sonar-scanner.bat ^
                         -Dsonar.projectKey=Earn-and-Burn ^
                         -Dsonar.host.url=http://localhost:9000 ^
-                        -Dsonar.token=sqp_021bddfe93bc35945f4f7a0b16838f44c96f1aea ^
+                        -Dsonar.token=sqa_0ce905e2790e1a6f26e271ce93035f7ce579b69c ^
                         -Dsonar.projectBaseDir=microservices ^
                         -Dsonar.sources=. ^
                         -Dsonar.exclusions=**/*.gitignore,**/.mvn/wrapper/maven-wrapper.properties,**/mvnw,**/*.cmd,**/data/journal/** ^
